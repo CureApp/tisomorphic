@@ -1,5 +1,7 @@
 # tisomorphic
 
+[![Circle CI](https://circleci.com/gh/CureApp/tisomorphic.svg?style=svg)](https://circleci.com/gh/CureApp/tisomorphic)
+
 Make npm modules available in Titanium.
 
 
