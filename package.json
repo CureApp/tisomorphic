@@ -1,0 +1,63 @@
+{
+  "name": "tisomorphic",
+  "version": "1.0.0",
+  "description": "Make npm modules available in Titanium",
+  "author": "CureApp, Inc.",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Shin Suzuki",
+      "email": "shinout310@gmail.com",
+      "url": "https://github.com/shinout"
+    }
+  ],
+  "main": "index.js",
+  "bin": {
+    "tisomorphic": "bin/tisomorphic"
+  },
+  "scripts": {
+    "postinstall": "bin/tiso-install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bmp": "cc-bmp",
+    "bmp-p": "cc-bmp -p",
+    "bmp-m": "cc-bmp -m",
+    "bmp-j": "cc-bmp -j",
+    "circle": "cc-generate-yml",
+    "post-dependencies": "echo post-dependencies",
+    "pre-release": "echo pre-release",
+    "post-release": "echo post-release",
+    "gh-pages": "echo gh-pages"
+  },
+  "dependencies": {
+    "coffee-script": "^1.10.0",
+    "debug": "^2.2.0",
+    "ti-superagent": "^0.7.0",
+    "titaniumifier": "^1.5.0"
+  },
+  "devDependencies": {
+    "node-circleci-autorelease": "^1.5.11",
+    "titanium": "^5.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CureApp/tisomorphic.git"
+  },
+  "keywords": [
+    "titanium",
+    "mobile",
+    "browserify",
+    "commonjs",
+    "require",
+    "isomorphic"
+  ],
+  "node-circleci-autorelease": {
+    "config": {
+      "git-user-name": "CircleCI",
+      "git-user-email": "circleci@cureapp.jp",
+      "version-prefix": "v",
+      "create-branch": false,
+      "create-gh-pages": false,
+      "gh-pages-dir": "doc"
+    }
+  }
+}
