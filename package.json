@@ -4,6 +4,9 @@
   "description": "Make npm modules available in Titanium",
   "author": "CureApp, Inc.",
   "license": "MIT",
+  "directories": {
+    "test": "spec"
+  },
   "maintainers": [
     {
       "name": "Shin Suzuki",
@@ -16,8 +19,9 @@
     "tisomorphic": "bin/tisomorphic"
   },
   "scripts": {
+    "clear": "rm -rf .tisomorphic-*",
     "postinstall": "bin/tiso-install",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha spec/* --require 'espower-coffee/guess'",
     "bmp": "cc-bmp",
     "bmp-p": "cc-bmp -p",
     "bmp-m": "cc-bmp -m",
@@ -35,7 +39,10 @@
     "titaniumifier": "^1.5.0"
   },
   "devDependencies": {
+    "espower-coffee": "^1.0.1",
+    "mocha": "^2.3.4",
     "node-circleci-autorelease": "^1.5.11",
+    "power-assert": "^1.2.0",
     "titanium": "^5.0.5"
   },
   "repository": {

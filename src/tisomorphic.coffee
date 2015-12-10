@@ -143,8 +143,9 @@ class Tisomorphic
             _____('symlinking node_modules/%s', file)
             fs.symlinkSync(@cwd + '/node_modules/' + file, @tmpdir + '/node_modules/' + file)
 
-        _____('symlinking ti-superagent into node_modules')
-        fs.symlinkSync(__dirname + '/../node_modules/ti-superagent', @tmpdir + '/node_modules/ti-superagent')
+        unless fs.existsSync(@tmpdir + '/node_modules/ti-superagent')
+            _____('symlinking ti-superagent into node_modules')
+            fs.symlinkSync(__dirname + '/../node_modules/ti-superagent', @tmpdir + '/node_modules/ti-superagent')
 
 
     ###*
@@ -160,12 +161,16 @@ class Tisomorphic
         _____('unlinking package.json in tmpdir if exists')
         @rm(@tmpdir + '/package.json')
 
-        _____('unlinking node_modules/* in tmpdir if exists')
-        for file in fs.readdirSync(@tmpdir + '/node_modules')
-            @rm(@tmpdir + '/node_modules/' + file)
 
-        _____('removing dir: %s', @tmpdir + '/node_modules')
-        @rmdir @tmpdir + '/node_modules'
+        if fs.existsSync(@tmpdir + '/node_modules')
+
+            _____('unlinking node_modules/* in tmpdir if exists')
+            for file in fs.readdirSync(@tmpdir + '/node_modules')
+                @rm(@tmpdir + '/node_modules/' + file)
+
+            _____('removing dir: %s', @tmpdir + '/node_modules')
+            @rmdir @tmpdir + '/node_modules'
+
 
         _____('removing dir: %s', @tmpdir)
         @rmdir @tmpdir
