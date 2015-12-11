@@ -42,3 +42,6 @@ p.then(function(res) {
   console.log(err);
 });
 ```
+
+## TODO
+- modify `alloy.jmk` in the project to insert files directly into `Resources` directory.
