@@ -1,6 +1,6 @@
 {
   "name": "tisomorphic",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Make npm modules available in Titanium",
   "author": "CureApp, Inc.",
   "license": "MIT",
