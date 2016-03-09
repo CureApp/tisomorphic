@@ -1,3 +1,7 @@
 #!/usr/bin/env node
-require('coffee-script/register');
-require('../src/installer').run();
+
+var fs = require('fs');
+
+if (fs.existsSync(__dirname + '/../dist')) {
+    require('../dist/installer').run();
+}

@@ -6,3 +6,4 @@ test
 .bmp.yml
 circle.yml
 npm-debug.log
+src
