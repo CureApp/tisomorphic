@@ -1,3 +1,1 @@
-require('coffee-script/register');
-
-module.exports = require('./src/tisomorphic');
+module.exports = require('./dist/tisomorphic');

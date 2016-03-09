@@ -2,3 +2,4 @@ node_modules
 npm-debug.log
 !test/sample-proj/node_modules/tisomorphic
 .tisomorphic-*
+dist
